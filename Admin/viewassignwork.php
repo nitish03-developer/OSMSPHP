@@ -1,34 +1,29 @@
-<?php
-define('TITLE', 'Status');
-    include('includes/header.php');
-    include('../dbConnection.php');
-    session_start();
-    if($_SESSION['is_login'])
+<?php 
+  define('TITLE', 'Work Report');
+  define('PAGE', 'workreport');
+  include('includes/header.php'); 
+  include('../dbConnection.php');    
+  session_start();
+    if(isset($_SESSION['is_adminlogin']))
     {
-        $rEmail = $_SESSION['rEmail'];
+        $aEmail = $_SESSION['aEmail'];
     }
-    else{
-        echo "<script> location.href='RequesterLogin.php'</script>";
-    }
+    else
+    {
+        echo "<script> location.href='login.php'</script>";
+    }      
+  
 ?>
-<!-- Start 2nd Column -->
-<div class="col-sm-6 mt-5 mx-5">
-    <form action="" method="post" class="form-inline d-print-none">
-        <div class="form-group mr-3">
-            <label for="checkid" class="mr-3">Enter Request ID</label>
-            <input type="text" class="form-control mr-3" id="checkid" name="checkid">
-        </div>
-        <button type="submit" class="btn btn-danger">Search</button>
-    </form>
-    <?php
-        if(isset($_REQUEST['checkid']))
+    <!-- start 2nd column -->
+    <div class="col-sm-6 mt-5 mx-5">
+    <h3 class="text-center">Assigned work Details</h3>
+    <?php 
+        if(isset($_REQUEST['view']))
         {
-        $sql = "SELECT * FROM assignwork_tb WHERE request_id = {$_REQUEST['checkid']}";
-        $result = $conn->query($sql);
-        $row = $result->fetch_assoc();
-        if(($row['request_id'] == $_REQUEST['checkid'])){ ?>
-    <h3 class="text-center mt-5">Assigned Work Details</h3>
-    <table class="table table-boardered">
+            $sql = "SELECT * FROM assignwork_tb WHERE request_id = {$_REQUEST['id']}";
+            $result = $conn->query($sql);
+            $row = $result->fetch_assoc(); ?>
+            <table class="table table-boardered">
     <tbody>
         <tr>
         <td>Request ID</td>
@@ -92,18 +87,15 @@ define('TITLE', 'Status');
     </tbody>
     </table>
     <div class="text-center">
-            <form action="" class="mb-3 d-print-none">
-                <input type="submit" class="btn btn-danger" value="Print" onClick="window.print()">
-                <input type="submit" class="btn btn-secondary" value="Close">
+            <form action="" class="mb-3 d-print-none d-inline">
+                <input type="submit" class="btn btn-danger" value="Print" onClick="window.print()"></form>
+              <form action="work.php" class="mb-3 d-print-none d-inline"><input type="submit" class="btn btn-secondary" value="Close">
             </form>
     </div>
- <?php } else {
-     echo '<div class="alert alert-warning mt-4">Your Request is Still Pending</div>';
- }
-    } ?>
+            <?php }?>
+    </div>
 
-</div> <!-- End 2nd Column -->
-
+    <!-- End 2nd column -->
 
 <?php
     include('includes/footer.php');

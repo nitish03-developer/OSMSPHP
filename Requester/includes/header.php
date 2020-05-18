@@ -19,7 +19,7 @@
         <!-- Top Navabar -->
         <nav class="navabr navbar-dark fixed-top 
         bg-success fixed-md-nowrap p-0 
-        shadow"><a class="navbar-brand col-sm-3
+        shadow d-print-none"><a class="navbar-brand col-sm-3
          col-md-2 mr-0" 
          href="RequesterProfile.php">OSMS</a></nav>
 
@@ -28,7 +28,7 @@
          <div class="container-fluid" style="margin-top:40px;">
             <div class="row">    <!-- Start Row -->
              
-                <nav class="col-sm-2 bg-light sidebar py-5"> <!-- Start Side Bar 1st column -->
+                <nav class="col-sm-2 bg-light sidebar py-5 d-print-none"> <!-- Start Side Bar 1st column -->
                     <div class="sidebar-sticky">
                         <ul class="nav flex-column">
                             <li class="nav-item">

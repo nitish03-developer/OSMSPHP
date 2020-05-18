@@ -27,7 +27,7 @@
     <div class="container-fluid" style="margin-top:40px;">
             <div class="row">    <!-- Start Row -->
              
-                <nav class="col-sm-2 bg-light sidebar py-5"> <!-- Start Side Bar 1st column -->
+                <nav class="col-sm-2 bg-light sidebar py-5 d-print-none"> <!-- Start Side Bar 1st column -->
                     <div class="sidebar-sticky">
                         <ul class="nav flex-column">
                             <li class="nav-item">
