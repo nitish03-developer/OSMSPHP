@@ -10,6 +10,7 @@ define('TITLE', 'Change Password');
     else{
         echo "<script> location.href='RequesterLogin.php'</script>";
     }
+    $rEmail = $_SESSION['rEmail'];
     if(isset($_REQUEST['passupdate']))
     {
         if($_REQUEST['rPassword'] == "")

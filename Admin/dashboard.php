@@ -11,7 +11,25 @@
     else
     {
         echo "<script> location.href='login.php'</script>";
-    }     
+    }
+    $sql= "SELECT max(request_id) FROM submitrequest_tb";
+    $result = $conn->query($sql);
+    // $row = $result->fetch_row();
+    $row = mysqli_fetch_row($result);
+    $submitrequest = $row[0]; 
+    
+    $sql= "SELECT max(request_id) FROM assignwork_tb";
+    $result = $conn->query($sql);
+    $row = $result->fetch_row();
+ //$row = mysqli_fetch_row($result);
+    $assignwork = $row[0]; 
+    
+    $sql= "SELECT * FROM technician_tb";
+    $result = $conn->query($sql);
+    //$row = $result->fetch_row();
+ //$row = mysqli_fetch_row($result);
+    $totaltech = $result->num_rows; 
+    
 ?>
 
 
@@ -26,9 +44,9 @@
                         </div>
                         <div class="card-body">
                         <h4 class="card-title">
-                        43
+                        <?php echo $submitrequest; ?>
                         </h4>
-                        <a href="#" class="btn text-white">View</a>
+                        <a href="request.php" class="btn text-white">View</a>
                         </div>
                         
                     </div>
@@ -40,9 +58,9 @@
                         </div>
                         <div class="card-body">
                         <h4 class="card-title">
-                        23
+                        <?php echo $assignwork; ?>
                         </h4>
-                        <a href="#" class="btn text-white">View</a>
+                        <a href="work.php" class="btn text-white">View</a>
                         </div>
                         
                     </div>
@@ -54,9 +72,9 @@
                         </div>
                         <div class="card-body">
                         <h4 class="card-title">
-                        12
+                        <?php echo $totaltech; ?>
                         </h4>
-                        <a href="#" class="btn text-white">View</a>
+                        <a href="technician.php" class="btn text-white">View</a>
                         </div>
                         
                     </div>
