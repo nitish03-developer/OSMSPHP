@@ -1,9 +1,5 @@
-<!-- Start Contact Us -->
-<div class="container">
-        <h2 class="text-center mb-4">
-            Contact Us</h2>
-            <!-- Start 1st Column -->
-        <div class="row"><div class="col-md-8">
+<!-- Start 1st Column -->
+<div class="row"><div class="col-md-8">
         <form action="" method="post">
         <input type="text" class="form-control" name="name"
         placeholder="Name"><br>
@@ -16,3 +12,4 @@
         name="submit"><br><br>
         </form>
     </div>
+    <!-- End 1st Column -->

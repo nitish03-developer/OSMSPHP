@@ -31,7 +31,7 @@
       <ul class="navbar-nav pl-5 custom-nav">
           <li class="nav-item"><a href="index.php"
           class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="#services" 
+          <li class="nav-item"><a href="#service" 
           class="nav-link">Services</a></li>
           <li class="nav-item"><a href="#registration"
            class="nav-link">Registration</a></li>
@@ -75,7 +75,7 @@
      <!-- End Introduction Section -->
       <!-- Start Sevices Section -->
 
-      <div class="container text-center border-bottom">
+      <div class="container text-center border-bottom" id="service">
          <h2>Our Services</h2>
          <div class="row mt-4">
              <div class="col sm-4 mb-4">
@@ -95,7 +95,7 @@
      </div>
      <!-- End Sevices Section -->
      <!-- Registration Form -->
-     <div class="container-fluid mb-5">
+     <div class="container-fluid mb-5" id="registration">
         <?php include('UserRegistration.php') ?>
      </div>
         
@@ -150,23 +150,13 @@
   </div> <!-- End Team Jumbotron -->
 
      <!-- Start Contact Us -->
-     <div class="container">
+     <div class="container" id="contact">
         <h2 class="text-center mb-4">
             Contact Us</h2>
+            
             <!-- Start 1st Column -->
-        <div class="row"><div class="col-md-8">
-        <form action="" method="post">
-        <input type="text" class="form-control" name="name"
-        placeholder="Name"><br>
-        <input type="text" class="form-control" name="subject"
-        placeholder="subject"><br>
-        <input type="text" class="form-control" name="email"
-        placeholder="email"><br>
-        <textarea class="form-control" name="message" placeholder="How can we help you?" style="height:150px;"></textarea>
-        <input type="submit" class="btn btn-primary" value="Send"
-        name="submit"><br><br>
-        </form>
-    </div>
+            <?php include('contact.php') ?>
+        
     <!-- End 1st Column -->
     <!-- Start 2nd Column -->
     <div class="col-md-4 text-center">  
@@ -185,7 +175,7 @@
     <a href="http:kenduadih.pythonanywhere.com/">www.kenduadih.pythonanywhere.com</a>
 </div>
         </div>
-     </div>
+     
      <!-- End Contact Us -->
 
      <!-- Start Footer-->
@@ -204,7 +194,7 @@
         </div>    <!-- End Footer 1st Column -->
 
         <div class="col-md-6 text-right">   <!-- Start Footer 2nd Column -->
-          <small> Designed by <a href="https://www.geekyshows.com" target="_blank">Nitish Mahato</a> &copy; 2018. </small>
+          <small> Designed by <a href="https://www.geekyshows.com" target="_blank">Nitish Mahato</a> &copy; 2020. </small>
           <small class="ml-2"><a href="Admin/login.php">Admin Login</small>
         </div>    <!-- End Footer 2nd Column -->
       </div>    <!-- End Footer Row -->
